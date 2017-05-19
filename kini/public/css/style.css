@@ -1,0 +1,343 @@
+
+body{
+	background: gray; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white,gray); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white,gray); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white,gray); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white,gray); /* Standard syntax */
+}
+
+
+.read{
+	width:75px !important;
+	height: 75px !important;
+	border:none !important;
+	text-align: center;
+	font-weight: bold;
+}
+
+.ball{
+	background: url("../images/esfera.png");
+	background-repeat: no-repeat;
+}
+
+.ball2{
+	background: url("../images/esfera-orange2.png");
+	background-repeat: no-repeat;
+}
+
+.ball3{
+	background: url("../images/esfera-yellow.png");
+	background-repeat: no-repeat;
+}
+
+.ball4{
+	background: url("../images/esfera-green2.png");
+	background-repeat: no-repeat;
+}
+
+/*
+form{
+	border: 2px solid gray;
+	border-radius: 10px;
+*/
+	/*Bordes con gradientes de colores - solo disponible para mozilla - por eso el prefijo "-moz-"   */
+/*-moz-border-top-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff8844 #ff6633 #ff5522 #ff4411 #ff3300;
+   -moz-border-right-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff6644 #ff6633 #ff5522 #ff4411 #ff3300;
+   -moz-border-bottom-colors: blue lightblue skyblue;
+   -moz-border-left-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff4444 #ff6633 #ff5522 #ff4411 #ff3300;
+}*/
+
+nav{
+  text-align: center;
+	background-color: rgba(255,15,25,0.5);	
+	-webkit-box-shadow:2px 4px 4px rgba(255,15,50,1);
+	-moz-box-shadow:2px 4px 4px rgba(255,15,50,1);
+}
+
+
+details{
+	/*Sirve para partir las palabras que son muy largas para el contenedor y evitar que se deforme*/
+	word-wrap: break-word;
+}
+
+ 
+#multicolumna{
+	-moz-border-image:url(border-images.png);
+	-webkit-border-image:url(border-images.png);
+	-moz-border-image-repeat: repeat;
+	-webkit-border-image-repeat: repeat;
+
+}
+
+/* Sombra de los contenedores */
+/*Desplazamiento horizontal de la sombra, Desplazamiento vertical de la sombra, Difuminado, Color de la sombra*/
+#multicolumna{
+	border:solid 4px solid blue;
+	padding: 10px;
+	-moz-box-shadow:2px 5px 3px darkblue;
+	-webkit-box-shadow:2px 5px 3px darkblue;
+}
+
+/* First Letter!!! CSS2*/
+/* También existe la seudo clase... first-line.... lo mismo pero para la primera línea de texto*/
+#multicolumna:first-letter{
+	font-weight: bold;
+	font-size: 23px;
+	font-family: Cursive;
+}
+
+header{
+	background-color: green;
+	/* Resplandor con box shadow */
+	/* Parece no funcionar en chrome!!!!*/
+	-moz-box-shadow: 0px 0px 30px white; 
+	-webkit-box-shadow: 0px 0px 30px white; 
+    box-shadow: 0px 0px 30px white;
+}
+	
+
+/* Propiedad... @font-face .... para definir un tipo de fuente */
+@font-face{
+	font-family: miFuente;
+	src:url(Mogra/Mogra-Regular.ttf);
+	font-weight: bold;
+}
+#texto{
+	font-family: miFuente;
+	color: blue;
+
+	/*Probando las sombras de texto
+	Desplazamiento de la sombra a la derecha (1px).
+	Desplazamiento de la sombra hacia abajo (2px).
+	Color de la sombra (#999).*/
+	text-shadow: 1px 2px #999;
+}
+
+/*Contornear el texto con un trazo: 
+Con cuatro sombras sólidas a un píxel de distancia del texto, situadas a los cuatro lados, podemos conseguir un efecto de trazo alrededor del texto.
+*/
+#sombra3{
+	font-size: 25px;
+   text-shadow: -1px 0 #090, 1px 0 #090, 0 1px #090, 0 -1px #090;
+   color: #fff;
+}
+
+
+/*Texto en relieve: 
+Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre el texto. Puede ser un relieve o un bajo relieve, dependiendo de donde coloquemos ambas sombras.
+*/
+#sombra4{
+	font-size: 25px;
+   text-shadow: 1px 1px white, -1px -1px #333;
+   background-color: #ddd;
+   color: #ddd;
+   padding: 10px;
+}
+
+
+/* MEDIAS QUERIES */
+
+/* En archivos CSS separados "NO ES LA MEJOR OPCION"*/
+
+/* <link rel="stylesheet" href="estilo-imprimir.css" media="print">
+
+Este atributo media="print" quiere decir que los estilos deben aplicarse sólo cuando la página se están
+ mostrando para la impresión.
+
+
+ <link rel="stylesheet" href="estilo-pantallas-grandes.css" media="(min-width:1200px)">
+
+Este uso será seguramente más novedoso para ti. Quiere decir que esos estilos deben aplicarse sólo cuando la pantalla 
+del usuario 
+(En caso de ordenadores de escritorio, la ventana del navegador) tenga una anchura mínima de 1200 píxeles.
+*/
+
+
+
+/* ALTERNATIVA 2  "La más profesional"*/
+
+@media (min-width: 500px) {
+    h3{
+        margin: 1%;
+    }
+    .estiloresponsive{
+        float: right;
+        padding-left: 15px; 
+    }
+}
+
+
+/*
+Operador and: las dos condiciones deben cumplirse para que se evalúe como verdadera. 
+Operador not: es una negación de una condición. Cuando esa condición no se cumpla se aplicarán las media queries. 
+Operador only: se aplican las reglas solo en el caso que se cunpla cierta circunstancia. 
+Operador or: no existe como tal, pero puedes poner varias condiciones separadas por comas y cuando se cumpla
+ cualquiera de ellas, se aplicarán los estilos de las media queries.
+ */
+ @media (max-width: 600px) and (orientation: landscape) {
+    h3{
+        color: red;
+    }
+}
+
+/*
+Nota: Ten en cuenta que la mayoría de smartphones simulan tamaños de pantalla mayores, haciendo una especie de dimensiones 
+virtuales que faciliten la lectura de webs que no están diseñadas para Responsive Web Design. Por ello, lo más seguro es que 
+tengas que poner el "viewport" en el documento HTML a algo como: 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+Sin ese viewport tu móvil simularía que tiene unas dimensiones de unos 980 píxeles, cuando quizás la pantalla solo tenga una 
+anchura real de 320 o 500 píxeles. 
+Este asunto ya se explicó con detalle en el artículo sobre el viewport.
+
+Para ver en funcionamiento la parte del orientation (landscape o portrait), tienes que usar un móvil o tablet y cambiar la 
+posición de la pantalla, para que esté en horizontal o vertical.
+Nota: Si tienes un ordenador que no reconozca el cambio de orientación la posición siempre será considerada será landscape.
+*/
+
+
+/* Ojo que esta clase es para enlaces que vayan a este mismo documento, lo que se conocería como enlaces
+ internos en la misma página. Pero también lo podemos hacer para enlaces que vayan a otras partes de 
+ este dominio, lo que te puede resultar útil para diferenciar el estilo CSS de los enlaces 
+ internos (a tu dominio) y los enlaces a otros dominios externos.
+ */
+nav :local-link { 
+	/* Decoración que va a tener el texto, puede ser:
+	underline, overline, line-through, blink, none*/
+	text-decoration: blink; }
+
+
+/*
+Vamos a suponer que estamos trabajando en un documento alojado en la ruta http://www.mipaginaweb.com/2020/11/ 
+(fíjate que esta ruta, el camino completo y además en el número de directorios. Comprobarás que tendría dos niveles, 
+por tener dos directorios. Fíjate que acaba en una barra). Ahora dentro del código HTML de ese documento tenemos los
+ siguientes links o vínculos:
+
+A) <a href="http://www.mipaginaweb.com">Contáctenos</a>
+B) <a href="http://www.mipaginaweb.com/2014">2014</a>
+C) <a href="https://www.mipaginaweb.com/2020/11">Noviembre</a>
+D) <a href="http://www.mipaginaweb.com/2020/11/">Noviembre</a>
+E) <a href="https://www.mipaginaweb.com/2020/12/">Diciembre</a>
+F) <a href="http://mipaginaweb.com/2018/10/30">30 de octubre</a>
+Y sus estilos:
+
+1) a:local-link {...}
+2) a:local-link(0) {...}
+3) a:local-link(1) {...} 
+4) a:local-link(2) {...}
+5) a:local-link(3) {...}
+6) a:local-link(4) {...}
+*/
+
+/* 
+[attribute^="val"]
+Selecciona un elemento cuyo atributo "attribute" tenga un valor comienza con "val". Si "val" fuera la cadena vacía,
+ el selector no selecciona nada. 
+
+[att$="val"]
+Selecciona un elemento con el atributo "att" cuyo valor termina con el sufijo "val". Si "val" es la cadena vacía, el selector 
+no selecciona nada. 
+
+[att*="val"]
+Selecciona un elemento con el atributo "att" cuyo valor contiene al menos una instancia de la subcadena "val". Si "val" es la 
+cadena vacía, el selector no selecciona nada.
+*/
+/*
+input[type^="sub"]{
+	background-color: lightblue;
+}
+
+input[type$="eset"]{
+	background-color: green;
+}
+
+input[type*="week"]{
+	background-color: yellow;
+}
+*/
+/* SELECCIONAR ELEMENTOS IMPARES CON "odd"  y nth-of-type */
+form > input:nth-of-type(odd){
+	border-color: orange;
+	margin:20px;
+}
+
+
+/* SELECCIONAR ELEMENTOS IMPARES CON "even"  y nth-of-type */
+form > input:nth-of-type(even){
+	border-color: red;
+}
+
+/* Selecciona el "enesimo" elemento hijo */
+nav >ul >li:nth-child(2){
+	color:white;
+}
+
+
+/* Selecciona el "enesimo" elemento de una lista empezando por el último y donde n=1 es el ÚLTIMO elemento */
+nav >ul >li:nth-last-child(1){
+	color:yellow;
+}
+
+
+/* degradado simple*/
+#recuadro1{
+   height: 130px;
+   width: 630px;
+   background: linear-gradient(orange, pink);
+   /*
+   background: -webkit-linear-gradient(orange, pink);
+   background: -moz-linear-gradient(orange, pink);
+   background: -o-linear-gradient(orange, pink);*/
+}
+
+
+
+/*
+Nota: Sin embargo, en el momento de escribir este artículo la forma de elipse solo la implementa Firefox. Por lo que el
+ comportamiento predeterminado en Chrome continua siendo el circular.
+
+background: radial-gradient(10%, ellipse closest-side, #66f 60%, #f80 85%, #ffc);
+*/
+
+
+#recuadro5{
+	background: repeating-radial-gradient(circle, #fff, #666 25%);
+	background: -webkit-repeating-radial-gradient(circle, #fff, #666 25%);
+    background: -moz-repeating-radial-gradient(circle, #fff, #666 25%);
+    background: repeating-radial-gradient(circle, #fff, #666 25%);
+	height: 130px;
+    width: 630px;
+}
+
+
+
+  /* CSS3 ANIMACIONES*/
+
+
+  /* Animación simple de texto */
+
+  @keyframes movimiento-diagonal {
+   from {
+      left: 0px;
+   }
+   
+   to {
+      left: 100px;
+   }
+}
+
+
+#anim {
+   animation-name: movimiento-diagonal;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;/*para que vuelva a su posicion inicial */
+   width: 100px;
+   background-color: Teal;
+   color: #fff;
+   position: relative; 
+   padding: 2px;
+}
+
