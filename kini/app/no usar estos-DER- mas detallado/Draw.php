@@ -1,5 +1,5 @@
 <?php
-
+/* esto tiene validez para DER mas detallado y minucioso para usar estadisitcas!! 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -20,3 +20,4 @@ class Draw extends Model
         return $this->belongsToMany('App\Position','sorteos_posiciones','id_sorteo','id_posicion');
     }
 }
+*/

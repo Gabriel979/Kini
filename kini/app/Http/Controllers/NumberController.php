@@ -12,13 +12,10 @@ use Validator; //Estas línea es para poder usar el  "error de Validator" y make
 use Illuminate\Support\Facades\DB; // Para hacer consultas SQL
 
 
-// 12/3 sigue fallando el control de numeros repetidos en la fila!!!!!!!!!!!!!!
 
 class NumberController extends Controller
 {
 
-    protected $cuenta_repeticiones=array();
-    protected $cant_num_repet;
     protected $filas= array();
 
     /**
@@ -28,20 +25,11 @@ class NumberController extends Controller
      */
     public function index()
     {
-         
-        /* Setea variables a cero*/
-        $this->cant_num_repet=0;
-
-        for ($i=0; $i<46 ; $i++){
-            $this->cuenta_repeticiones[$i]=0;
-        }
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [8]); //el [8] reemplaza al LIMIt 8, pero igual lo pongo
         
         $this->prediccion();
-        //$this->cuenta_repetidos();
 
-        $this->cambia_repetidos();
-
-        return view('index',['filas'=>$this->filas]);
+        return view('index',['filas'=>$this->filas],['fechas'=>$fechas]);
     }
 
     /**
@@ -68,7 +56,15 @@ class NumberController extends Controller
             return Redirect::to('/cargar');
         }*/
         
-        Validator::make($request->all(), ['valor'=>'required|numeric|min:0|max:45']);
+        $v=Validator::make($request->all(), ['f1c1'=>'required|numeric|min:0|max:45','f1c2'=>'required|numeric|min:0|max:45','f1c3'=>'required|numeric|min:0|max:45',
+            'f1c4'=>'required|numeric|min:0|max:45','f1c5'=>'required|numeric|min:0|max:45','f1c6'=>'required|numeric|min:0|max:45',
+            'f2c1'=>'required|numeric|min:0|max:45','f2c2'=>'required|numeric|min:0|max:45','f2c3'=>'required|numeric|min:0|max:45',
+            'f2c4'=>'required|numeric|min:0|max:45','f2c5'=>'required|numeric|min:0|max:45','f2c6'=>'required|numeric|min:0|max:45',
+            'f3c1'=>'required|numeric|min:0|max:45','f3c2'=>'required|numeric|min:0|max:45','f3c3'=>'required|numeric|min:0|max:45',
+            'f3c4'=>'required|numeric|min:0|max:45','f3c5'=>'required|numeric|min:0|max:45','f3c6'=>'required|numeric|min:0|max:45',
+            'f4c1'=>'required|numeric|min:0|max:45','f4c2'=>'required|numeric|min:0|max:45','f4c3'=>'required|numeric|min:0|max:45',
+            'f4c4'=>'required|numeric|min:0|max:45','f4c5'=>'required|numeric|min:0|max:45','f4c6'=>'required|numeric|min:0|max:45',
+            'fecha'=>'required|date' ]);
 
         if($v->fails()){
             Session::flash('message-errors', 'Error al intentar guardar los datos!!');    
@@ -82,8 +78,6 @@ class NumberController extends Controller
     }
 
         
-
-
     /**
      * Display the specified resource.
      *
@@ -137,88 +131,45 @@ class NumberController extends Controller
         for($i=0; $i<4 ;$i++){
             for ($j=0; $j<6 ; $j++) { 
                 $this->filas[$i][$j]=random_int(0, 45);
-                $this->cuenta_repeticiones[$this->filas[$i][$j]]++; // va contando la cantidad de repeticiones!!
             } 
         }
+
+        $seis = array('0' => 99,'1' => 99,'2' => 99,'3' => 99, '4' => 99, '5' => 99 );
+
         /* Validar que no se repitan los numeros de la fila */
-        for($j=0; $j<4 ;$j++){          
-            for ($i=0; $i <6 ; $i++){
+        for($j=0; $j<4 ;$j++){          // las 4 filas de numeros
+            for ($i=0; $i <6 ; $i++){   // las 6 bolillas de cada fila
 
-                $buscado= $this->filas[$j][$i];
-
-                for ($k=0; $k<6 ; $k++) { 
-                    if($buscado == $this->filas[$j][$k] && $i!=$k ){
-                        $flag=1;
-                        for($h=0; $flag!=0 ; $h++) { 
-
-                            $nuevo=random_int(0, 45);
-
-                            if($this->cuenta_repeticiones[$nuevo]==0){     
-                                $this->filas[$j][$i]=$h;
-                                $this->cuenta_repeticiones[$h]++;
-                                $flag=0; 
-                            }    
-                        }
-                    } 
-                }  
-            }
-        }
-    }
-
-    /* Contar repeticiones */
-    /*protected function cuenta_repetidos(){
-
-        for ($i=0; $i<4 ; $i++) { 
-        
-            for ($j=0; $j<6 ; $j++){ 
+                if($i==0){
+                    $nuevo=random_int(0, 45);
+                    $this->filas[$j][$i]=$nuevo;
+                    $seis[0]=$nuevo;    
+                }
                 
-                $num=$this->filas[$i][$j];
 
-                $this->cuenta_repeticiones[$num]++;
-            }
-        }
-    } */           
-               
+                //se guarda el primer valor de la fila ($nuevo) y luego los otros 5 se tiene que preguntar si estan repetidos
+                if($i!=0){
+                    $otro=random_int(0, 45);
+                    $n=0;
+                                
+                    while( $n<6 ){ 
 
-    protected function cambia_repetidos(){
-
-        $cantidad=0;
-        $valores=array();
-        $j=0;
-
-        for ($i=0; $i <46 ; $i++) { 
-            if($this->cuenta_repeticiones[$i]>1){
-                $cantidad++;
-                $valores[$j]=$i;
-                $j++;
-            }
-        }
-
-        if($cantidad >3){
-            $this->localiza_valor($valores, $cantidad);
-
-        }
-    }
-
-    protected function localiza_valor(array $valores,int $cantidad){
-        $flag=1;
-
-        for ($i=0; $i<4 && $flag!=0 ; $i++) {
-            for ($j=0; $j<6 && $flag!=0 ; $j++){
-                for ($k=0; $k<$cantidad && $flag!=0 ; $k++) { 
-                    if($this->filas[$i][$j]==$valores[$k]){
-                        
-                        for($h=0; $h<46 && $flag!=0 ; $h++) { 
-                           if($this->cuenta_repeticiones[$h]==0)     
-                                $this->filas[$i][$j]=$h;
-                                $flag=0; 
+                        if($seis[$n]==$otro){
+                            $otro=random_int(0, 45);
+                            $n=0;   
                         }
+
+                        if($seis[$n]!=$otro) $n++;
                     }
-                } 
+
+                    $seis[$i]=$otro;
+                    $this->filas[$j][$i]=$otro;
+
+                }
+                  
             }
         }
     }
-
 
 
 }

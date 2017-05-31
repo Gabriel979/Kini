@@ -7,14 +7,23 @@ body{
     background: linear-gradient(white,gray); /* Standard syntax */
 }
 
-
-.read{
-	width:75px !important;
-	height: 75px !important;
-	border:none !important;
-	text-align: center;
-	font-weight: bold;
+details{
+	/*Sirve para partir las palabras que son muy largas para el contenedor y evitar que se deforme*/
+	word-wrap: break-word;
 }
+
+nav{
+  	text-align: center;
+  	background: -webkit-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Opera 11.1-12.0 */ 
+    background: -moz-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Firefox 3.6-15 */
+    background: linear-gradient(rgba(243,156,18,1),#FAAC58); /* Standard syntax */
+    padding-left: 2%;
+	-webkit-box-shadow:2px 4px 4px rgba(184,102,5,1);
+	-moz-box-shadow:2px 4px 4px rgba(184,102,5,1);
+	height: 55px;
+}
+
 
 .ball{
 	background: url("../images/esfera.png");
@@ -36,83 +45,102 @@ body{
 	background-repeat: no-repeat;
 }
 
-/*
-form{
-	border: 2px solid gray;
-	border-radius: 10px;
-*/
-	/*Bordes con gradientes de colores - solo disponible para mozilla - por eso el prefijo "-moz-"   */
-/*-moz-border-top-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff8844 #ff6633 #ff5522 #ff4411 #ff3300;
-   -moz-border-right-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff6644 #ff6633 #ff5522 #ff4411 #ff3300;
-   -moz-border-bottom-colors: blue lightblue skyblue;
-   -moz-border-left-colors: #ffcc99 #ffbb88 #ffaa77 #ff9966 #ff8855 #ff4444 #ff6633 #ff5522 #ff4411 #ff3300;
-}*/
-
-nav{
-  text-align: center;
-	background-color: rgba(255,15,25,0.5);	
-	-webkit-box-shadow:2px 4px 4px rgba(255,15,50,1);
-	-moz-box-shadow:2px 4px 4px rgba(255,15,50,1);
+.boton{
+	border:none !important;
+	background-color: transparent !important;
+	height: 50px;
 }
-
-
-details{
-	/*Sirve para partir las palabras que son muy largas para el contenedor y evitar que se deforme*/
-	word-wrap: break-word;
-}
-
- 
-#multicolumna{
-	-moz-border-image:url(border-images.png);
-	-webkit-border-image:url(border-images.png);
-	-moz-border-image-repeat: repeat;
-	-webkit-border-image-repeat: repeat;
-
-}
-
-/* Sombra de los contenedores */
-/*Desplazamiento horizontal de la sombra, Desplazamiento vertical de la sombra, Difuminado, Color de la sombra*/
-#multicolumna{
-	border:solid 4px solid blue;
-	padding: 10px;
-	-moz-box-shadow:2px 5px 3px darkblue;
-	-webkit-box-shadow:2px 5px 3px darkblue;
-}
-
-/* First Letter!!! CSS2*/
-/* También existe la seudo clase... first-line.... lo mismo pero para la primera línea de texto*/
-#multicolumna:first-letter{
-	font-weight: bold;
-	font-size: 23px;
-	font-family: Cursive;
-}
-
-header{
-	background-color: green;
-	/* Resplandor con box shadow */
-	/* Parece no funcionar en chrome!!!!*/
-	-moz-box-shadow: 0px 0px 30px white; 
-	-webkit-box-shadow: 0px 0px 30px white; 
-    box-shadow: 0px 0px 30px white;
-}
-	
-
-/* Propiedad... @font-face .... para definir un tipo de fuente */
-@font-face{
-	font-family: miFuente;
-	src:url(Mogra/Mogra-Regular.ttf);
-	font-weight: bold;
-}
-#texto{
-	font-family: miFuente;
+.boton:hover{
 	color: blue;
+}
 
-	/*Probando las sombras de texto
+.boton-menu{
+	border:none !important;
+	background-color: transparent !important;
+	padding-left: 5%;
+}
+
+.col_izq{
+	background-color: rgba(243,156,18,1);	/*Naranja*/
+	-webkit-box-shadow:2px 4px 4px rgba(184,102,5,1); 
+	-moz-box-shadow:2px 4px 4px rgba(184,102,5,1);	
+}
+
+.col_der{
+	background-color: rgba(254,254,254,0.5);	
+	-webkit-box-shadow: -3px 2px 4px rgba(66,73,73,1);
+	-moz-box-shadow: -3px 2px 4px rgba(66,73,73,1);
+	padding-top: 17%;	
+}
+
+.foot{
+	text-align: center;
+	background: -webkit-linear-gradient(rgba(243,156,18,1),#F88306); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(rgba(243,156,18,1),#F88306); /* Opera 11.1-12.0 */ 
+    background: -moz-linear-gradient(rgba(243,156,18,1),#F88306); /* Firefox 3.6-15 */
+    background: linear-gradient(rgba(243,156,18,1),#F88306); /* Standard syntax */
+    box-shadow: 0px -4px 4px rgba(184,102,5,1); 
+}
+
+.read{
+	width:75px !important;
+	height: 75px !important;
+	border:none !important;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+
+/*Anuncio*/
+@-webkit-keyframes girando {
+  from { -webkit-transform: rotateY(0deg); color: blue;   }
+  to   { -webkit-transform: rotateY(-360deg); color:red;  }
+}
+
+#contenedor {
+   /*margin: 30px auto;*/
+   /*-webkit-perspective: 60px;*/
+}
+
+#email{
+	padding-top: 1%;
+	padding-left: 2%;
+}
+
+@font-face{
+	font-family: Cursiva;
+	src:url(font/cursiva/ConeriaScript.ttf);
+}
+
+#frase{
+	padding-top: 100%;
+	padding-left: 5%;
+	font-family: Cursiva;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#girando {
+   -webkit-animation-name: girando;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: 5;
+   -webkit-animation-duration: 6s;
+   -webkit-transform-style: preserve-3d;
+}
+
+#item{
+	padding-top: 1%;
+}
+
+
+/*
+	Probando las sombras de texto
 	Desplazamiento de la sombra a la derecha (1px).
 	Desplazamiento de la sombra hacia abajo (2px).
-	Color de la sombra (#999).*/
+	Color de la sombra (#999).
 	text-shadow: 1px 2px #999;
-}
+*/
 
 /*Contornear el texto con un trazo: 
 Con cuatro sombras sólidas a un píxel de distancia del texto, situadas a los cuatro lados, podemos conseguir un efecto de trazo alrededor del texto.
@@ -133,26 +161,19 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
    background-color: #ddd;
    color: #ddd;
    padding: 10px;
+}	
+
+
+/* Propiedad... @font-face .... para definir un tipo de fuente */
+@font-face{
+	font-family: miFuente;
+	src:url(font/eat-at-joess.ttf);
 }
 
-
-/* MEDIAS QUERIES */
-
-/* En archivos CSS separados "NO ES LA MEJOR OPCION"*/
-
-/* <link rel="stylesheet" href="estilo-imprimir.css" media="print">
-
-Este atributo media="print" quiere decir que los estilos deben aplicarse sólo cuando la página se están
- mostrando para la impresión.
-
-
- <link rel="stylesheet" href="estilo-pantallas-grandes.css" media="(min-width:1200px)">
-
-Este uso será seguramente más novedoso para ti. Quiere decir que esos estilos deben aplicarse sólo cuando la pantalla 
-del usuario 
-(En caso de ordenadores de escritorio, la ventana del navegador) tenga una anchura mínima de 1200 píxeles.
-*/
-
+#titulo,#subtitulo{
+	font-family: miFuente;
+	text-shadow: 2px 2px 10px;
+}
 
 
 /* ALTERNATIVA 2  "La más profesional"*/
@@ -181,163 +202,5 @@ Operador or: no existe como tal, pero puedes poner varias condiciones separadas 
     }
 }
 
-/*
-Nota: Ten en cuenta que la mayoría de smartphones simulan tamaños de pantalla mayores, haciendo una especie de dimensiones 
-virtuales que faciliten la lectura de webs que no están diseñadas para Responsive Web Design. Por ello, lo más seguro es que 
-tengas que poner el "viewport" en el documento HTML a algo como: 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-Sin ese viewport tu móvil simularía que tiene unas dimensiones de unos 980 píxeles, cuando quizás la pantalla solo tenga una 
-anchura real de 320 o 500 píxeles. 
-Este asunto ya se explicó con detalle en el artículo sobre el viewport.
-
-Para ver en funcionamiento la parte del orientation (landscape o portrait), tienes que usar un móvil o tablet y cambiar la 
-posición de la pantalla, para que esté en horizontal o vertical.
-Nota: Si tienes un ordenador que no reconozca el cambio de orientación la posición siempre será considerada será landscape.
-*/
-
-
-/* Ojo que esta clase es para enlaces que vayan a este mismo documento, lo que se conocería como enlaces
- internos en la misma página. Pero también lo podemos hacer para enlaces que vayan a otras partes de 
- este dominio, lo que te puede resultar útil para diferenciar el estilo CSS de los enlaces 
- internos (a tu dominio) y los enlaces a otros dominios externos.
- */
-nav :local-link { 
-	/* Decoración que va a tener el texto, puede ser:
-	underline, overline, line-through, blink, none*/
-	text-decoration: blink; }
-
-
-/*
-Vamos a suponer que estamos trabajando en un documento alojado en la ruta http://www.mipaginaweb.com/2020/11/ 
-(fíjate que esta ruta, el camino completo y además en el número de directorios. Comprobarás que tendría dos niveles, 
-por tener dos directorios. Fíjate que acaba en una barra). Ahora dentro del código HTML de ese documento tenemos los
- siguientes links o vínculos:
-
-A) <a href="http://www.mipaginaweb.com">Contáctenos</a>
-B) <a href="http://www.mipaginaweb.com/2014">2014</a>
-C) <a href="https://www.mipaginaweb.com/2020/11">Noviembre</a>
-D) <a href="http://www.mipaginaweb.com/2020/11/">Noviembre</a>
-E) <a href="https://www.mipaginaweb.com/2020/12/">Diciembre</a>
-F) <a href="http://mipaginaweb.com/2018/10/30">30 de octubre</a>
-Y sus estilos:
-
-1) a:local-link {...}
-2) a:local-link(0) {...}
-3) a:local-link(1) {...} 
-4) a:local-link(2) {...}
-5) a:local-link(3) {...}
-6) a:local-link(4) {...}
-*/
-
-/* 
-[attribute^="val"]
-Selecciona un elemento cuyo atributo "attribute" tenga un valor comienza con "val". Si "val" fuera la cadena vacía,
- el selector no selecciona nada. 
-
-[att$="val"]
-Selecciona un elemento con el atributo "att" cuyo valor termina con el sufijo "val". Si "val" es la cadena vacía, el selector 
-no selecciona nada. 
-
-[att*="val"]
-Selecciona un elemento con el atributo "att" cuyo valor contiene al menos una instancia de la subcadena "val". Si "val" es la 
-cadena vacía, el selector no selecciona nada.
-*/
-/*
-input[type^="sub"]{
-	background-color: lightblue;
-}
-
-input[type$="eset"]{
-	background-color: green;
-}
-
-input[type*="week"]{
-	background-color: yellow;
-}
-*/
-/* SELECCIONAR ELEMENTOS IMPARES CON "odd"  y nth-of-type */
-form > input:nth-of-type(odd){
-	border-color: orange;
-	margin:20px;
-}
-
-
-/* SELECCIONAR ELEMENTOS IMPARES CON "even"  y nth-of-type */
-form > input:nth-of-type(even){
-	border-color: red;
-}
-
-/* Selecciona el "enesimo" elemento hijo */
-nav >ul >li:nth-child(2){
-	color:white;
-}
-
-
-/* Selecciona el "enesimo" elemento de una lista empezando por el último y donde n=1 es el ÚLTIMO elemento */
-nav >ul >li:nth-last-child(1){
-	color:yellow;
-}
-
-
-/* degradado simple*/
-#recuadro1{
-   height: 130px;
-   width: 630px;
-   background: linear-gradient(orange, pink);
-   /*
-   background: -webkit-linear-gradient(orange, pink);
-   background: -moz-linear-gradient(orange, pink);
-   background: -o-linear-gradient(orange, pink);*/
-}
-
-
-
-/*
-Nota: Sin embargo, en el momento de escribir este artículo la forma de elipse solo la implementa Firefox. Por lo que el
- comportamiento predeterminado en Chrome continua siendo el circular.
-
-background: radial-gradient(10%, ellipse closest-side, #66f 60%, #f80 85%, #ffc);
-*/
-
-
-#recuadro5{
-	background: repeating-radial-gradient(circle, #fff, #666 25%);
-	background: -webkit-repeating-radial-gradient(circle, #fff, #666 25%);
-    background: -moz-repeating-radial-gradient(circle, #fff, #666 25%);
-    background: repeating-radial-gradient(circle, #fff, #666 25%);
-	height: 130px;
-    width: 630px;
-}
-
-
-
-  /* CSS3 ANIMACIONES*/
-
-
-  /* Animación simple de texto */
-
-  @keyframes movimiento-diagonal {
-   from {
-      left: 0px;
-   }
-   
-   to {
-      left: 100px;
-   }
-}
-
-
-#anim {
-   animation-name: movimiento-diagonal;
-   animation-duration: 3s;
-   animation-iteration-count: infinite;
-   animation-direction: alternate;/*para que vuelva a su posicion inicial */
-   width: 100px;
-   background-color: Teal;
-   color: #fff;
-   position: relative; 
-   padding: 2px;
-}
 

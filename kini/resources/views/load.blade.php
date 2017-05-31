@@ -15,8 +15,9 @@
 
 		<br>
 
-		<label>Ingrese la fecha del sorteo:</label> <input type="date" name="date" required >
+		<label>Ingrese la fecha del sorteo:</label> <input type="date" name="fecha" required >
 
+		<br>
 		<br>
 
 		<button type="submit" class="btn btn-primary">Guardar <i class="fa fa-save"></i> </button>
