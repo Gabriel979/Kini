@@ -50,11 +50,16 @@ class FrontController extends Controller
 
     }
 
-    public function sorteos(){
+    public function sorteos($fecha){
+
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();    
 
         $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
-    	$filas = DB::select('SELECT * FROM numeros order by fecha DESC LIMIT 1', [1]);
 
-        return view('sorteos',['filas'=>$filas],['fechas'=>$fechas]);
+    	$filas = DB::select("SELECT * FROM numeros WHERE fecha='$fecha' LIMIT 1", [1]);
+
+        return view('sorteos',['filas'=>$filas,'fechas'=>$fechas , 'frases'=>$frases]);
     }
 }

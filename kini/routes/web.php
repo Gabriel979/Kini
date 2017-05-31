@@ -25,7 +25,7 @@ Route::get('cargar','NumberController@create');
 
 Route::post('cargar/store', 'NumberController@store');
 
-Route::get('sorteos-anteriores','FrontController@sorteos');
+Route::get('sorteos-anteriores/{fecha}','FrontController@sorteos');
 
 //Route::get('estadisticas','FrontController@showStatis');
 

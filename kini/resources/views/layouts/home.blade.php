@@ -29,16 +29,29 @@
 	<div class="col-md-2 col_izq">
 		<aside>
 			<ul class="nav navbar-nav">
-				<li> <button class="boton"><b>Inicio</b></button> </li>
+				<li> <button class="boton"><b><i class="fa fa-home"></i>  Inicio</b></button> </li>
 				<li class="dropdown" id="desplegar">
 				   <button data-target="desplegar" class="boton dropdown-toggle" data-toggle="dropdown"  >
-				    <b> Sorteos anteriores</b> <b class="caret"></b>
+				    <b>Sorteos anteriores</b> <b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
 				  @for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
 				  	 @php $var=$fechas[$i]->fecha;  $mostrar=date_create($fechas[$i]->fecha); @endphp
-				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">{{date_format($mostrar,"j/n/Y")}}</a></li>
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores', $parameters=[$fechas[$i]->fecha])}}">{{date_format($mostrar,"j/n/Y")}}</a></li>
 				  @endfor
+				  </ul>
+				</li>
+
+				<li class="dropdown" id="numeros">
+				   <button data-target="numeros" class="boton dropdown-toggle" data-toggle="dropdown"  >
+				    <b>Números significados </b> <b class="caret"></b>
+				  </button> 
+				  <ul class="boton-menu dropdown-menu" >
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">Números - sueños</a></li>
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">Números - profesiones</a></li>
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">Números - nombres</a></li>
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">Números - animales</a></li>
+				    <li><a class="boton-menu" href="{{url('sorteos-anteriores')}}">Números - fútbol</a></li>
 				  </ul>
 				</li>
 			</ul>	
@@ -51,8 +64,8 @@
 
 		<section>
 			<article id="frase">
-				<p>"El azar favorece a una mente bien entrenada"</p>
-				<p class="text-center" >Louis Pasteur</p>
+				<p>{{ $frases[0]->frase }}</p>
+				<p class="text-right" >{{ $frases[0]->autor }}</p>
 			</article>
 		</section>
 

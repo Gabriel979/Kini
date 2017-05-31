@@ -25,11 +25,13 @@ class NumberController extends Controller
      */
     public function index()
     {
+        $frases=$this->elige_frase();    
+
         $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [8]); //el [8] reemplaza al LIMIt 8, pero igual lo pongo
         
         $this->prediccion();
 
-        return view('index',['filas'=>$this->filas],['fechas'=>$fechas]);
+        return view('index',['filas'=>$this->filas,'fechas'=>$fechas ,'frases'=>$frases]);
     }
 
     /**
@@ -170,6 +172,25 @@ class NumberController extends Controller
             }
         }
     }
+
+
+    public function elige_frase(){
+
+        $cantidad = DB::select('SELECT COUNT(frase) as "cantidad" FROM frases');
+
+        $ids = DB::select('SELECT id FROM frases');
+
+        $cant=$cantidad[0]->cantidad-1;
+
+        $elegir=rand(0,$cant);
+
+        $id=$ids[$elegir]->id;
+
+        $frases = DB::select("SELECT frase,autor FROM frases where id='$id' LIMIT 1");
+
+        return $frases;
+    }
+
 
 
 }
