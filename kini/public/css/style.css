@@ -7,13 +7,7 @@ body{
     background: linear-gradient(white,gray); /* Standard syntax */
 }
 
-details{
-	/*Sirve para partir las palabras que son muy largas para el contenedor y evitar que se deforme*/
-	word-wrap: break-word;
-}
-
 nav{
-  	text-align: center;
   	background: -webkit-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Safari 5.1-6.0 */
     background: -o-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Opera 11.1-12.0 */ 
     background: -moz-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Firefox 3.6-15 */
@@ -51,12 +45,12 @@ nav{
 	height: 50px;
 }
 .boton:hover{
-	color: blue;
+	color: #6E6E6E;
 }
 
 .boton-menu{
 	border:none !important;
-	background-color: transparent !important;
+	background-color: rgba(243,156,18,1);
 	padding-left: 5%;
 }
 
@@ -73,6 +67,10 @@ nav{
 	padding-top: 17%;	
 }
 
+.dropdown-menu{
+	background-color: rgba(243,156,18,1) !important;
+}
+
 .foot{
 	text-align: center;
 	background: -webkit-linear-gradient(rgba(243,156,18,1),#F88306); /* Safari 5.1-6.0 */
@@ -82,12 +80,21 @@ nav{
     box-shadow: 0px -4px 4px rgba(184,102,5,1); 
 }
 
+.items{
+	padding-bottom:2%; 
+	padding-top:2%;
+}
+
 .read{
 	width:75px !important;
 	height: 75px !important;
 	border:none !important;
 	text-align: center;
 	font-weight: bold;
+}
+
+.titulo{
+	font-family: miFuente;
 }
 
 
@@ -134,14 +141,6 @@ nav{
 }
 
 
-/*
-	Probando las sombras de texto
-	Desplazamiento de la sombra a la derecha (1px).
-	Desplazamiento de la sombra hacia abajo (2px).
-	Color de la sombra (#999).
-	text-shadow: 1px 2px #999;
-*/
-
 /*Contornear el texto con un trazo: 
 Con cuatro sombras sólidas a un píxel de distancia del texto, situadas a los cuatro lados, podemos conseguir un efecto de trazo alrededor del texto.
 */
@@ -156,7 +155,7 @@ Con cuatro sombras sólidas a un píxel de distancia del texto, situadas a los c
 Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre el texto. Puede ser un relieve o un bajo relieve, dependiendo de donde coloquemos ambas sombras.
 */
 #sombra4{
-	font-size: 25px;
+   font-size: 25px;
    text-shadow: 1px 1px white, -1px -1px #333;
    background-color: #ddd;
    color: #ddd;
@@ -170,37 +169,30 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	src:url(font/eat-at-joess.ttf);
 }
 
-#titulo,#subtitulo{
+#subtitulo{
 	font-family: miFuente;
-	text-shadow: 2px 2px 10px;
+	/*text-shadow: 2px 2px 10px;*/
 }
 
-
-/* ALTERNATIVA 2  "La más profesional"*/
-
-@media (min-width: 500px) {
-    h3{
-        margin: 1%;
-    }
-    .estiloresponsive{
-        float: right;
-        padding-left: 15px; 
-    }
+/*Barra superior en dispositivos moviles*/
+#word{
+	float: right;
+	font-family: miFuente !important;
+	width: 65%;
+	font-size: 40px;
 }
 
-
-/*
-Operador and: las dos condiciones deben cumplirse para que se evalúe como verdadera. 
-Operador not: es una negación de una condición. Cuando esa condición no se cumpla se aplicarán las media queries. 
-Operador only: se aplican las reglas solo en el caso que se cunpla cierta circunstancia. 
-Operador or: no existe como tal, pero puedes poner varias condiciones separadas por comas y cuando se cumpla
- cualquiera de ellas, se aplicarán los estilos de las media queries.
- */
- @media (max-width: 600px) and (orientation: landscape) {
-    h3{
-        color: red;
-    }
+#bar{
+	float:none;
+	background: none;
+	border-color: rgba(184,102,5,1);
+	font-size: 35px;
+	width: 100px;
+	padding-left: 5%;
 }
 
-
-
+#col-izq{
+  animation-duration: 3s;
+  animation-delay: 1s;
+  border-radius: 10px;
+}

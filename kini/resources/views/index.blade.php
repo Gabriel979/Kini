@@ -3,20 +3,19 @@
 @section('content')
 
 	<div class="row">
-		<div class="col-md-5"></div>
-		<h2 id="subtitulo">PREDICCIÓN</h2>	
+	
+		<div class="container-fluid text-center bounce"><h2 id="subtitulo">PREDICCIÓN</h2></div>
 	</div>
+	
 	<br>
 	<br>
 	
-
 	@include('form.grid2')
 
 	<br>
 	<br>
 	<div class="row">
-		<div class="col-md-5"></div>
-		<div class="col-md-1">
+		<div class="container-fluid text-center">
 			<button id="suerte" class="btn btn-success">Probar Suerte</button>	
 		</div>
 	</div>
