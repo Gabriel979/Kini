@@ -31,4 +31,12 @@ Route::get('sorteos-anteriores/{fecha}','FrontController@sorteos');
 
 Route::get('estadisticas','StatisticsController@index');
 
+Route::get('numeros-suenos','FrontController@numerosSignificados');
 
+Route::get('numeros-profesiones','FrontController@profesiones');
+
+Route::get('numeros-animales','FrontController@animales');
+
+Route::get('numeros-futbol','FrontController@futbol');
+
+Route::get('numeros-nombres','FrontController@nombres');

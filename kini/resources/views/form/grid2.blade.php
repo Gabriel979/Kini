@@ -5,13 +5,13 @@
 			<h4 class="fadeInRight container-fluid text-center">Primera Jugada</h4>
 		</div>	
 		<div class="row text-center">
-			<div class="hidden-xs-down col-sm-3 text"></div>
-			<div class="col-sm-1 text fadeInLeft"><input type="text" value="{{$filas[0][0]}}" class="ball read fadeInLeft" name="valor" id="f1c1" > </div>
-			<div class="col-sm-1 text"><input type="text" value="{{$filas[0][1]}}" class="ball read" name="valor" id="f1c2" > </div>
-			<div class="col-sm-1 text"><input type="text" value="{{$filas[0][2]}}" class="ball read" name="valor" id="f1c3" > </div>
-			<div class="col-sm-1 text"><input type="text" value="{{$filas[0][3]}}" class="ball read" name="valor" id="f1c4" > </div>
-			<div class="col-sm-1 text"><input type="text" value="{{$filas[0][4]}}" class="ball read" name="valor" id="f1c5" > </div>
-			<div class="col-sm-1 text"><input type="text" value="{{$filas[0][5]}}" class="ball read" name="valor" id="f1c6" > </div>
+			<div class="hidden-xs-down col-sm-3"></div>
+			<div class="col-sm-1 fadeInLeft"><input type="text" value="{{$filas[0][0]}}" class="ball read fadeInLeft" name="valor" id="f1c1" > </div>
+			<div class="col-sm-1"><input type="text" value="{{$filas[0][1]}}" class="ball read" name="valor" id="f1c2" > </div>
+			<div class="col-sm-1"><input type="text" value="{{$filas[0][2]}}" class="ball read" name="valor" id="f1c3" > </div>
+			<div class="col-sm-1"><input type="text" value="{{$filas[0][3]}}" class="ball read" name="valor" id="f1c4" > </div>
+			<div class="col-sm-1"><input type="text" value="{{$filas[0][4]}}" class="ball read" name="valor" id="f1c5" > </div>
+			<div class="col-sm-1"><input type="text" value="{{$filas[0][5]}}" class="ball read" name="valor" id="f1c6" > </div>
 		</div>	
 		<br>
 		<div class="row text-center">

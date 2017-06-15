@@ -6,7 +6,7 @@
 	<!-- estilo en css3 -->
 	<meta name="viewport" content="width=device-width, user-scalable=no ,initial-scale=1.0" />
 
-	<link rel="shorcut icon" href="{{asset('images/icono.png')}}" />
+	<link rel="shorcut icon" href="{{asset('images/icono2.png')}}" />
 	<link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/animate.css')}}" rel="stylesheet" />
@@ -20,7 +20,7 @@
 <body>
 
 <nav >
-	<h1 class="text-left hidden-sm-down titulo animated fadeInLeft"> Kini Simulador  </h1>
+	<h1 class="text-left hidden-sm-down titulo animated fadeInLeft"><img id="trebol-icono" src="{{asset('images/icono-kini.png')}}"> Kini Simulador  </h1>
 
 	<div class="row hidden-md-up">
 		<div class="hidden-md-up">
@@ -29,7 +29,7 @@
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 					<a href="{{url('inicio')}}"> <button class="boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a>
 					<div class="dropdown-submenu">
-						  <a  class="test" tabindex="-1" href="#"> <button class="boton" ><b>Sorteos</b> <b class="caret"></b></button></a> 
+						  <a  class="test" tabindex="-1" href="#"> <button class="boton" > <i class="fa fa-calendar"></i> <b>Sorteos</b> <b class="caret"></b></button></a> 
 						  <ul class="dropdown-menu" >
 						  	@for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
 						  	 	@php $var=$fechas[$i]->fecha;  $mostrar=date_create($fechas[$i]->fecha); @endphp
@@ -38,13 +38,13 @@
 						  </ul>
 					</div >
 					<div class="dropdown-submenu" >
-					    <a class="test" tabindex="-1" href="#"><button class="boton"><b> Números <span class="caret"></span></b></button></a> 
+					    <a class="test" tabindex="-1" href="#"><button class="boton"> <i class="fa fa-info-circle"></i> <b> Números <span class="caret"></span></b></button></a> 
 					  <ul class="boton-menu dropdown-menu">
-					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('')}}">Sueños</a></li>
-					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('')}}">Profesiones</a></li>
-					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('')}}">Nombres</a></li>
-					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('')}}">Animales</a></li>
-					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('')}}">Fútbol</a></li>
+					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-suenos')}}">Sueños  <i class="fa fa-bed"></i></a></li>
+					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-profesiones')}}">Profesiones  <i class="fa fa-user-md"></i></a></li>
+					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-nombres')}}">Nombres  <i class="fa fa-font"></i></a></li>
+					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-animales')}}">Animales  <i class="fa fa-paw"></i></a></li>
+					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-futbol')}}">Fútbol  <i class="fa fa-futbol-o"></i></a></li>
 					  </ul>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 				<li><a href="{{url('inicio')}}"> <button class="boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a> </li>
 				<li class="dropdown" id="desplegar">
 				   <button data-target="desplegar" class="boton dropdown-toggle" data-toggle="dropdown"  >
-				    <b>Sorteos anteriores</b> <b class="caret"></b>
+				    <i class="fa fa-calendar"></i> <b> Sorteos anteriores</b> <b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
 				  @for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
@@ -75,14 +75,14 @@
 
 				<li class="dropdown" id="numeros">
 				   <button data-target="numeros" class="boton dropdown-toggle" data-toggle="dropdown" >
-				    <b>Números significados </b> <b class="caret"></b>
+				    <i class="fa fa-info-circle"></i> <b> Números significados </b> <b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
-				    <li><a class="boton-menu" href="{{url('')}}">Sueños</a></li>
-				    <li><a class="boton-menu" href="{{url('')}}">Profesiones</a></li>
-				    <li><a class="boton-menu" href="{{url('')}}">Nombres</a></li>
-				    <li><a class="boton-menu" href="{{url('')}}">Animales</a></li>
-				    <li><a class="boton-menu" href="{{url('')}}">Fútbol</a></li>
+				    <li><a class="boton-menu" href="{{url('numeros-suenos')}}">Sueños  <i class="fa fa-bed"></i></a> </li>
+				    <li><a class="boton-menu" href="{{url('numeros-profesiones')}}">Profesiones  <i class="fa fa-user-md"></i></a> </li>
+				    <li><a class="boton-menu" href="{{url('numeros-nombres')}}">Nombres  <i class="fa fa-font"></i></a> </li>
+				    <li><a class="boton-menu" href="{{url('numeros-animales')}}">Animales  <i class="fa fa-paw"></i></a> </li>
+				    <li><a class="boton-menu" href="{{url('numeros-futbol')}}">Fútbol  <i class="fa fa-futbol-o"></i></a> </li>
 				  </ul>
 				</li>
 			</ul>	

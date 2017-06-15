@@ -1,20 +1,15 @@
 
 body{
-	background: gray; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white,gray); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white,gray); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white,gray); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white,gray); /* Standard syntax */
+	
+    background: url("../images/fondo.png") no-repeat;
 }
 
 nav{
-  	background: -webkit-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Safari 5.1-6.0 */
-    background: -o-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Opera 11.1-12.0 */ 
-    background: -moz-linear-gradient(rgba(243,156,18,1),#FAAC58); /* Firefox 3.6-15 */
-    background: linear-gradient(rgba(243,156,18,1),#FAAC58); /* Standard syntax */
+  	background-color: rgba(15,245,57,0.3);
+    /*background: transparent;*/
     padding-left: 2%;
-	-webkit-box-shadow:2px 4px 4px rgba(184,102,5,1);
-	-moz-box-shadow:2px 4px 4px rgba(184,102,5,1);
+	-webkit-box-shadow:2px 4px 4px rgba(21,40,18,1);
+	-moz-box-shadow:2px 4px 4px rgba(21,40,18,1);
 	height: 55px;
 }
 
@@ -45,39 +40,39 @@ nav{
 	height: 50px;
 }
 .boton:hover{
-	color: #6E6E6E;
+	color: white;
 }
 
 .boton-menu{
 	border:none !important;
-	background-color: rgba(243,156,18,1);
+	background-color: rgba(15,245,57,1);
 	padding-left: 5%;
 }
 
 .col_izq{
-	background-color: rgba(243,156,18,1);	/*Naranja*/
-	-webkit-box-shadow:2px 4px 4px rgba(184,102,5,1); 
-	-moz-box-shadow:2px 4px 4px rgba(184,102,5,1);	
+	background-color: rgba(15,245,57,0.2);
+	/*background: transparent;*/
+	-webkit-box-shadow:2px 4px 4px rgba(21,40,18,1); 
+	-moz-box-shadow:2px 4px 4px rgba(21,40,18,1);	
 }
 
 .col_der{
-	background-color: rgba(254,254,254,0.5);	
-	-webkit-box-shadow: -3px 2px 4px rgba(66,73,73,1);
-	-moz-box-shadow: -3px 2px 4px rgba(66,73,73,1);
+	background-color: rgba(15,245,57,0.5);
+	/*background: transparent;*/	
+	-webkit-box-shadow: -3px 2px 4px rgba(21,40,18,1);
+	-moz-box-shadow: -3px 2px 4px rgba(21,40,18,1);
 	padding-top: 17%;	
+	border-radius: 10px;
 }
 
 .dropdown-menu{
-	background-color: rgba(243,156,18,1) !important;
+	background-color: rgba(15,245,57,1) !important;
 }
 
 .foot{
 	text-align: center;
-	background: -webkit-linear-gradient(rgba(243,156,18,1),#F88306); /* Safari 5.1-6.0 */
-    background: -o-linear-gradient(rgba(243,156,18,1),#F88306); /* Opera 11.1-12.0 */ 
-    background: -moz-linear-gradient(rgba(243,156,18,1),#F88306); /* Firefox 3.6-15 */
-    background: linear-gradient(rgba(243,156,18,1),#F88306); /* Standard syntax */
-    box-shadow: 0px -4px 4px rgba(184,102,5,1); 
+    background-color: rgba(15,245,57,0.5);
+    box-shadow: 0px -4px 4px rgba(21,40,18,1); 
 }
 
 .items{
@@ -96,8 +91,6 @@ nav{
 .titulo{
 	font-family: miFuente;
 }
-
-
 
 /*Anuncio*/
 @-webkit-keyframes girando {
@@ -195,4 +188,329 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
   animation-duration: 3s;
   animation-delay: 1s;
   border-radius: 10px;
+}
+
+
+#trebol-icono{
+	padding-bottom: 1%;
+}
+
+.icon{
+	width: 50px !important;
+	font-size: 50px; /*para font awesome*/
+	position: center;
+	margin-top: 5%;
+}
+
+
+#lienzo{
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 10px;
+	padding: 20px;
+	height: 700px;
+	overflow-y: scroll;
+}
+
+.num{
+	font-weight: bold;
+	color: blue;
+	font-size: 19px;
+}
+
+.text{
+	padding: 2px;
+	border:1px dotted blue;
+}
+
+.futbol{
+	padding: 2px !important;
+	border:1px dotted blue !important;
+	height: 133px;	
+}
+
+.nombres{
+	padding: 2px;
+	border:1px dotted blue;
+}
+
+#cai{
+	height: 60px !important;
+}
+
+.largo{
+	font-size: 12px !important;
+}
+
+.family1{
+	font-family: helvetic;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+@font-face{
+	font-family: Simpson;
+	src:url(font/simpsons/Simpsonfont.otf);
+}
+
+.family2{
+	font-family: Simpson;
+	font-size: 19px;
+}
+
+@font-face{
+	font-family: Cumple;
+	src:url(font/cumple/Birthday.otf);
+}
+
+.family3{
+	font-family: Cumple;
+	font-size: 32px;
+}
+
+
+@font-face{
+	font-family: Pretoria;
+	src:url(font/pretoria/Praetoria.otf);
+}
+
+.family4{
+	font-family: Pretoria;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+
+@font-face{
+	font-family: Mac;
+	src:url(font/mac/McLetters.ttf);
+}
+
+.family5{
+	font-family: Mac;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+@font-face{
+	font-family: Lie;
+	src:url(font/lie/lie.ttf);
+}
+
+.family6{
+	font-family: Lie;
+	font-size: 22px;
+}
+
+@font-face{
+	font-family: Rayo;
+	src:url(font/rayo/thundertitanpunch.ttf);
+}
+
+.family7{
+	font-family: Rayo;
+	font-size: 15px;
+}
+
+@font-face{
+	font-family: Cali;
+	src:url(font/cali/cali.ttf);
+}
+
+.family8{
+	font-family: Cali;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+@font-face{
+	font-family: Western;
+	src:url(font/western/western.ttf);
+}
+
+.family9{
+	font-family: Western;
+}
+
+
+@font-face{
+	font-family: Like;
+	src:url(font/like/ilikeyourcrocs.ttf);
+}
+
+.family10{
+	font-family: Like;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.family11{
+	font-family: Cursiva;
+	font-size: 23px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Noemi;
+	src:url(font/noemi/Noemi.otf);
+}
+
+.family12{
+	font-family: Noemi;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Flores;
+	src:url(font/flores/Flowered.ttf);
+}
+
+.family13{
+	font-family: Flores;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Fun;
+	src:url(font/fun/SpringFun.ttf);
+}
+
+.family14{
+	font-family: Fun;
+	font-size: 20px;
+}
+
+
+@font-face{
+	font-family: Eternity;
+	src:url(font/eternity/eternity.ttf);
+}
+
+.family15{
+	font-family: Eternity;
+	font-size: 17px;
+}
+
+@font-face{
+	font-family: Monster;
+	src:url(font/monster/monster.ttf);
+}
+
+.family16{
+	font-family: Monster;
+	font-size: 20px;
+}
+
+@font-face{
+	font-family: Asi;
+	src:url(font/asiago/Asiago.ttf);
+}
+
+.family17{
+	font-family: Asi;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Asi;
+	src:url(font/asiago/Asiago.ttf);
+}
+
+.family17{
+	font-family: Asi;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Cronus;
+	src:url(font/cronus/Cronus.otf);
+}
+
+.family18{
+	font-family: Cronus;
+	font-size: 24px;
+}
+
+
+@font-face{
+	font-family: Miss;
+	src:url(font/miss/Miss.ttf);
+}
+
+.family19{
+	font-family: Miss;
+	font-size: 26px;
+}
+
+@font-face{
+	font-family: Coffee;
+	src:url(font/coffee/Coffee.ttf);
+}
+
+.family20{
+	font-family: Coffee;
+	font-size: 22px;
+}
+
+@font-face{
+	font-family: Cubo;
+	src:url(font/cubo/Qube.ttf);
+}
+
+.family21{
+	font-family: Cubo;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Kentucky;
+	src:url(font/kentucky/Kentucky.ttf);
+}
+
+.family22{
+	font-family: Kentucky;
+	font-size: 20px;
+}
+
+@font-face{
+	font-family: Thyssen;
+	src:url(font/thyssen/Thyssen.TTF);
+}
+
+.family23{
+	font-family: Thyssen;
+	font-size: 22px;
+}
+
+@font-face{
+	font-family: Gatsby;
+	src:url(font/gatsby/Gatsby.ttf);
+}
+
+.family24{
+	font-family: Gatsby;
+	font-size: 27px;
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: Prince;
+	src:url(font/prince/Prince.ttf);
+}
+
+.family25{
+	font-family: Prince;
+	font-size: 20px;
+}
+
+
+.nom-largo{
+	font-size: 13px;
+	font-weight: bold;
 }

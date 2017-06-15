@@ -62,4 +62,47 @@ class FrontController extends Controller
 
         return view('sorteos',['filas'=>$filas,'fechas'=>$fechas , 'frases'=>$frases]);
     }
+
+    public function numerosSignificados(){
+
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();
+
+        return view('suenos',['frases'=>$frases]);
+    }
+
+    public function profesiones(){
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();
+
+        return view('profesiones',['frases'=>$frases]);   
+    }
+
+
+    public function animales(){
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();
+
+        return view('animales',['frases'=>$frases]);   
+    }
+
+    public function futbol(){
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();
+
+        return view('futbol',['frases'=>$frases]);   
+    }
+
+    public function nombres(){
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase();
+
+        return view('nombres',['frases'=>$frases]);   
+    }
+    
 }
