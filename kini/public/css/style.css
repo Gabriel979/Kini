@@ -202,6 +202,13 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	margin-top: 5%;
 }
 
+.icon2{
+	width: 80px !important;
+	font-size: 80px; /*para font awesome*/
+	position: center;
+	margin-top: 5%;
+}
+
 
 #lienzo{
 	background-color: rgba(255,255,255,0.7);
@@ -245,6 +252,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: helvetic;
 	font-weight: bold;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -255,6 +263,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family2{
 	font-family: Simpson;
 	font-size: 19px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -264,7 +273,8 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 .family3{
 	font-family: Cumple;
-	font-size: 32px;
+	font-size: 25px;
+	min-height: 34px;
 }
 
 
@@ -277,6 +287,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Pretoria;
 	font-weight: bolder;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 
@@ -289,6 +300,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Mac;
 	font-weight: bold;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 
@@ -300,6 +312,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family6{
 	font-family: Lie;
 	font-size: 22px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -310,6 +323,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family7{
 	font-family: Rayo;
 	font-size: 15px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -321,6 +335,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Cali;
 	font-size: 20px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 
@@ -331,6 +346,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 .family9{
 	font-family: Western;
+	min-height: 34px;
 }
 
 
@@ -343,12 +359,14 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Like;
 	font-size: 24px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 .family11{
 	font-family: Cursiva;
 	font-size: 23px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -358,8 +376,9 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 .family12{
 	font-family: Noemi;
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -371,6 +390,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Flores;
 	font-size: 20px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -381,6 +401,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family14{
 	font-family: Fun;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 
@@ -392,6 +413,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family15{
 	font-family: Eternity;
 	font-size: 17px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -402,6 +424,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family16{
 	font-family: Monster;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -413,6 +436,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Asi;
 	font-size: 20px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -424,6 +448,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Asi;
 	font-size: 20px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -434,6 +459,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family18{
 	font-family: Cronus;
 	font-size: 24px;
+	min-height: 34px;
 }
 
 
@@ -444,7 +470,8 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 .family19{
 	font-family: Miss;
-	font-size: 26px;
+	font-size: 23px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -455,6 +482,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family20{
 	font-family: Coffee;
 	font-size: 22px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -465,6 +493,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family21{
 	font-family: Cubo;
 	font-size: 20px;
+	min-height: 34px;
 	font-weight: bold;
 }
 
@@ -476,6 +505,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family22{
 	font-family: Kentucky;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -486,6 +516,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family23{
 	font-family: Thyssen;
 	font-size: 22px;
+	min-height: 34px;
 }
 
 @font-face{
@@ -497,6 +528,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-family: Gatsby;
 	font-size: 27px;
 	font-weight: bold;
+	min-height: 34px;
 }
 
 @font-face{
@@ -507,10 +539,12 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 .family25{
 	font-family: Prince;
 	font-size: 20px;
+	min-height: 34px;
 }
 
 
 .nom-largo{
 	font-size: 13px;
 	font-weight: bold;
+	min-height: 34px;
 }
