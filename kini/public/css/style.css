@@ -548,3 +548,11 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	font-weight: bold;
 	min-height: 34px;
 }
+
+.nombre-pie{
+	font-size: 9px;
+}
+
+.load{
+	background-color: lightgray;
+}

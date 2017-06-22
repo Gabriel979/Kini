@@ -41,7 +41,11 @@ class NumberController extends Controller
      */
     public function create()
     {
-        return view('load');
+        $frases=$this->elige_frase();    
+
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [8]);
+
+        return view('load',['frases'=>$frases,'fechas'=>$fechas]);
     }
 
     /**

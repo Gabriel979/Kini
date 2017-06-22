@@ -38,7 +38,11 @@ class FrontController extends Controller
 
     public function carga(){
 
-        return view('load');
+        $algo = new NumberController;
+
+        $frases=$algo->elige_frase(); 
+        
+        return view('load',['frases'=>$frases]);
     }
     
 
@@ -67,42 +71,56 @@ class FrontController extends Controller
 
         $algo = new NumberController;
 
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
+
         $frases=$algo->elige_frase();
 
-        return view('suenos',['frases'=>$frases]);
+        return view('suenos',['frases'=>$frases, 'fechas'=>$fechas]);
     }
 
     public function profesiones(){
+
         $algo = new NumberController;
+
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
 
         $frases=$algo->elige_frase();
 
-        return view('profesiones',['frases'=>$frases]);   
+        return view('profesiones',['frases'=>$frases, 'fechas'=>$fechas]);   
     }
 
 
     public function animales(){
+
         $algo = new NumberController;
+
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
 
         $frases=$algo->elige_frase();
 
-        return view('animales',['frases'=>$frases]);   
+        return view('animales',['frases'=>$frases, 'fechas'=>$fechas]);   
     }
 
     public function futbol(){
+
         $algo = new NumberController;
+
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
 
         $frases=$algo->elige_frase();
 
-        return view('futbol',['frases'=>$frases]);   
+        return view('futbol',['frases'=>$frases, 'fechas'=>$fechas]);   
     }
 
     public function nombres(){
+
         $algo = new NumberController;
+
+        $fechas = DB::select('SELECT fecha FROM numeros order by fecha DESC LIMIT 8', [1]);
 
         $frases=$algo->elige_frase();
 
-        return view('nombres',['frases'=>$frases]);   
+        return view('nombres',['frases'=>$frases, 'fechas'=>$fechas]);   
     }
     
 }
