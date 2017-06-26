@@ -13,6 +13,9 @@ nav{
 	height: 55px;
 }
 
+.navbar-nav{
+	margin-top: 5%;
+}
 
 .ball{
 	background: url("../images/esfera.png");
@@ -35,19 +38,29 @@ nav{
 }
 
 .boton{
-	border:none !important;
+	/*border:none !important;*/
 	background-color: transparent !important;
 	height: 50px;
 }
+
 .boton:hover{
-	color: white;
+	color: lightgreen !important;
+	background-color: darkgreen;
 }
 
 .boton-menu{
-	border:none !important;
-	background-color: rgba(15,245,57,1);
-	padding-left: 5%;
+	/*border:none !important;*/
+	background-color: rgba(31,178,8,0.8);
+	/*padding-left: 5%;*/
+	width: 100% !important;
 }
+
+/*.boton-menu:hover{*/
+	/*border:none !important;*/
+	/*color: lightgreen;
+	background-color: darkgreen;*/
+	/*padding-left: 5%;*/
+/*}*/
 
 .col_izq{
 	background-color: rgba(15,245,57,0.2);
@@ -66,7 +79,8 @@ nav{
 }
 
 .dropdown-menu{
-	background-color: rgba(15,245,57,1) !important;
+	background-color: background-color: rgba(31,178,8,0.8) !important;
+	width: 100%;
 }
 
 .foot{
@@ -225,18 +239,25 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 }
 
 .text{
-	padding: 2px;
+	padding: 3px;
+	padding-bottom: 5px;
 	border:1px dotted blue;
+	width:116px;
+	margin: 5px;
 }
 
 .futbol{
 	padding: 2px !important;
 	border:1px dotted blue !important;
-	height: 133px;	
+	height: 133px;
+	margin:5px;
+	width: 116px;
 }
 
 .nombres{
 	padding: 2px;
+	margin: 5px;
+	width: 116px;
 	border:1px dotted blue;
 }
 
@@ -555,4 +576,52 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 .load{
 	background-color: lightgray;
+}
+
+.li-left .boton{
+	width: 100%;
+	border-color: darkgreen;
+	text-align: left;
+}
+
+.li-left .boton:hover{
+	background: darkgreen !important;
+	box-shadow: 4px 2px 2px black;
+	font-weight: bold;
+}
+
+a{
+	color:black;
+}
+
+a:hover{
+	color: lightgreen;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.fa-home, .fa-calendar, .fa-info-circle{
+
+	font-size: 20px;
+}
+
+#frase-2{
+	border: 2px solid lightgreen;
+	border-radius: 10px;
+	padding: 3%;
+	box-shadow: 2px 2px 2px black;
+	margin-bottom: 2%;
+}
+
+
+.fecha-sorteo{
+	background-color: lightgray;
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+
+
+.fila{
+	padding-left: 5%;
+	padding-right: 2%;
 }

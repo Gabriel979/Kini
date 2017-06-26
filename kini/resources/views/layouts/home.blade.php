@@ -27,9 +27,11 @@
 			<div id="bar" class="dropdown text-left ">
 				<button id="desp" class="boton dropdown-toggle titulo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa fa-bars" ></i></button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-					<a href="{{url('inicio')}}"> <button class="boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a>
+
+					<div class="container-fluid"><a href="{{url('inicio')}}"><button class="btn-lg boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a></div>
+
 					<div class="dropdown-submenu">
-						  <a  class="test" tabindex="-1" href="#"> <button class="boton" > <i class="fa fa-calendar"></i> <b>Sorteos</b> <b class="caret"></b></button></a> 
+						  <a  class="test" tabindex="-1" href="#"><button class="boton" ><i class="fa fa-calendar"></i> <b>Sorteos</b><b class="caret"></b></button></a> 
 						  <ul class="dropdown-menu" >
 						  	@for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
 						  	 	@php $var=$fechas[$i]->fecha;  $mostrar=date_create($fechas[$i]->fecha); @endphp
@@ -56,35 +58,38 @@
 
 <br>
 
+<!-- Menú de inicio para pantallas medianas y grandes -->
 <div class="row">
-	<div id="col-izq" class="hidden-sm-down col-md-2 col_izq fadeInLeft">
+	<div id="col-izq" class="hidden-sm-down col-md-2 col_izq fadeInLeft text-left">
 		<aside >
 			<ul class="nav navbar-nav">
-				<li><a href="{{url('inicio')}}"> <button class="boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a> </li>
-				<li class="dropdown" id="desplegar">
+				<li class="li-left" ><a href="{{url('inicio')}}"><button class="boton"> <b><i class="fa fa-home"></i>  Inicio </b></button></a></li>
+				
+				<li class="dropdown li-left" id="desplegar">
 				   <button data-target="desplegar" class="boton dropdown-toggle" data-toggle="dropdown"  >
-				    <i class="fa fa-calendar"></i> <b> Sorteos anteriores</b> <b class="caret"></b>
+				    <i class="fa fa-calendar"></i>  <b>Sorteos anteriores</b> <b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
 				  @for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
 				  	 @php $var=$fechas[$i]->fecha;  $mostrar=date_create($fechas[$i]->fecha); @endphp
-				    <li><a class="boton-menu" href="{{url('sorteos-anteriores', $parameters=[$fechas[$i]->fecha])}}">{{date_format($mostrar,"j/n/Y")}}</a></li>
+				    <li class="li-left"><a href="{{url('sorteos-anteriores', $parameters=[$fechas[$i]->fecha])}}"><button class="boton text-center">{{date_format($mostrar,"j/n/Y")}}</button></a></li>
 				  @endfor
 				  </ul>
 				</li>
 
-				<li class="dropdown" id="numeros">
+				<li class="dropdown li-left" id="numeros">
 				   <button data-target="numeros" class="boton dropdown-toggle" data-toggle="dropdown" >
-				    <i class="fa fa-info-circle"></i> <b> Números significados </b> <b class="caret"></b>
+				    <i class="fa fa-info-circle"></i>  <b>Números - significados </b> <b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
-				    <li><a class="boton-menu" href="{{url('numeros-suenos')}}">Sueños  <i class="fa fa-bed"></i></a> </li>
-				    <li><a class="boton-menu" href="{{url('numeros-profesiones')}}">Profesiones  <i class="fa fa-user-md"></i></a> </li>
-				    <li><a class="boton-menu" href="{{url('numeros-nombres')}}">Nombres  <i class="fa fa-font"></i></a> </li>
-				    <li><a class="boton-menu" href="{{url('numeros-animales')}}">Animales  <i class="fa fa-paw"></i></a> </li>
-				    <li><a class="boton-menu" href="{{url('numeros-futbol')}}">Fútbol  <i class="fa fa-futbol-o"></i></a> </li>
+				    <li class="li-left"><a href="{{url('numeros-suenos')}}"><button class="boton">  Sueños  <i class="fa fa-bed"></i></button></a> </li>
+				    <li class="li-left"><a href="{{url('numeros-profesiones')}}"><button class="boton">  Profesiones  <i class="fa fa-user-md"></i></button></a> </li>
+				    <li class="li-left"><a href="{{url('numeros-nombres')}}"><button class="boton">  Nombres  <i class="fa fa-font"></i></button></a> </li>
+				    <li class="li-left"><a href="{{url('numeros-animales')}}"><button class="boton">  Animales  <i class="fa fa-paw"></i></button></a> </li>
+				    <li class="li-left"><a href="{{url('numeros-futbol')}}"><button class="boton">  Fútbol  <i class="fa fa-futbol-o"></i></button></a> </li>
 				  </ul>
 				</li>
+				
 			</ul>	
 		</aside>
 
@@ -95,8 +100,10 @@
 
 		<section>
 			<article id="frase">
+			<div id="frase-2">
 				<p>{{ $frases[0]->frase }}</p>
 				<p class="text-right" >{{ $frases[0]->autor }}</p>
+			</div>	
 			</article>
 		</section>
 
@@ -104,11 +111,13 @@
 
 
 
-	<div class="container-fluid col-md-9 text-center">
+	<div class="container-fluid  col-xs-9 col-sm-9 col-md-9 text-center">
 		
 		@yield('content')	
 
 	</div>
+
+
 	<aside  id="contenedor" class="hidden-sm-down col-md-1 col_der"> 
 		<div id="girando"> <p>Anuncie aquí!</p> </div>
 	</aside>
@@ -132,35 +141,11 @@
 </footer>
 
 
-<script>
-	$(document).ready(function(){
-	  $('.dropdown-submenu a.test').on("click", function(e){
-	    $(this).next('ul').toggle();
-	    e.stopPropagation();
-	    e.preventDefault();
-	  });
-	});
-</script>
 
-<script>
-	$.fn.extend({
-	    animateCss: function (animationName) {
-	        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-	        this.addClass('animated ' + animationName).one(animationEnd, function() {
-	            $(this).removeClass('animated ' + animationName);
-	        });
-	    }
-	});
+@section('scripts')
+		{!!Html::script('js/animaciones.js')!!}
+@endsection
 
-	$(document).ready(function(){
-	  	$('.ball').animateCss('flip');
-	  	$('.ball2').animateCss('flip');
-	  	$('.ball3').animateCss('flip');
-	  	$('.ball4').animateCss('flip');
-	  	
-	  	$('#col-izq').animateCss('fadeInLeft');
-	});
-</script>
 
 </body>
 
