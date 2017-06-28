@@ -1,12 +1,11 @@
 
 body{
-	
-    background: url("../images/fondo.png") no-repeat;
+    background-image: url("../images/fondo7.png");
+    background-size: 100% 100%;
 }
 
 nav{
-  	background-color: rgba(15,245,57,0.3);
-    /*background: transparent;*/
+  	background-color: rgba(31,178,8,0.8);
     padding-left: 2%;
 	-webkit-box-shadow:2px 4px 4px rgba(21,40,18,1);
 	-moz-box-shadow:2px 4px 4px rgba(21,40,18,1);
@@ -38,7 +37,6 @@ nav{
 }
 
 .boton{
-	/*border:none !important;*/
 	background-color: transparent !important;
 	height: 50px;
 }
@@ -49,29 +47,18 @@ nav{
 }
 
 .boton-menu{
-	/*border:none !important;*/
 	background-color: rgba(31,178,8,0.8);
-	/*padding-left: 5%;*/
 	width: 100% !important;
 }
 
-/*.boton-menu:hover{*/
-	/*border:none !important;*/
-	/*color: lightgreen;
-	background-color: darkgreen;*/
-	/*padding-left: 5%;*/
-/*}*/
-
 .col_izq{
-	background-color: rgba(15,245,57,0.2);
-	/*background: transparent;*/
+	background-color: rgba(31,178,8,0.8);
 	-webkit-box-shadow:2px 4px 4px rgba(21,40,18,1); 
 	-moz-box-shadow:2px 4px 4px rgba(21,40,18,1);	
 }
 
 .col_der{
-	background-color: rgba(15,245,57,0.5);
-	/*background: transparent;*/	
+	background-color: rgba(31,178,8,0.8);
 	-webkit-box-shadow: -3px 2px 4px rgba(21,40,18,1);
 	-moz-box-shadow: -3px 2px 4px rgba(21,40,18,1);
 	padding-top: 17%;	
@@ -79,13 +66,13 @@ nav{
 }
 
 .dropdown-menu{
-	background-color: background-color: rgba(31,178,8,0.8) !important;
+	background-color: rgba(31,178,8,0.8) !important;
 	width: 100%;
 }
 
 .foot{
 	text-align: center;
-    background-color: rgba(15,245,57,0.5);
+    background-color: rgba(31,178,8,0.8);
     box-shadow: 0px -4px 4px rgba(21,40,18,1); 
 }
 
@@ -110,11 +97,6 @@ nav{
 @-webkit-keyframes girando {
   from { -webkit-transform: rotateY(0deg); color: blue;   }
   to   { -webkit-transform: rotateY(-360deg); color:red;  }
-}
-
-#contenedor {
-   /*margin: 30px auto;*/
-   /*-webkit-perspective: 60px;*/
 }
 
 #email{
@@ -207,6 +189,10 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 
 #trebol-icono{
 	padding-bottom: 1%;
+}
+
+#trebol-icono2{
+	padding-bottom: 7%;
 }
 
 .icon{
@@ -582,6 +568,7 @@ Con una sombra oscura y otra clara podemos conseguir un efecto de relieve sobre 
 	width: 100%;
 	border-color: darkgreen;
 	text-align: left;
+	box-shadow: 1px 1px 2px black;
 }
 
 .li-left .boton:hover{
@@ -606,17 +593,19 @@ a:hover{
 }
 
 #frase-2{
-	border: 2px solid lightgreen;
+	border: 4px solid darkgreen;
 	border-radius: 10px;
 	padding: 3%;
 	box-shadow: 2px 2px 2px black;
 	margin-bottom: 2%;
+	/*background-color: lightgreen;*/
+	/*color: white;*/
 }
 
 
 .fecha-sorteo{
 	background-color: lightgray;
-	border: 1px solid gray;
+	border: 3px solid lightgreen;
 	border-radius: 10px;
 }
 
@@ -625,3 +614,49 @@ a:hover{
 	padding-left: 5%;
 	padding-right: 2%;
 }
+
+.esfera{
+	width: 75px;
+	height: 75px;
+}
+
+#desp{
+
+	border-radius: 10px;
+	border-color: darkgreen;
+}
+
+#desp:hover{
+	background-color: darkgreen !important;
+	box-shadow: 2px 2px 4px !important;
+	padding: 3px !important;
+}
+
+.btn-chico{
+	width: 125px;
+	height: 40px;
+	border-radius: 5px;
+	background-color: rgba(31,178,8,1);
+	text-align: left;
+	padding-left: 10px;
+}
+
+.btn-chico:hover{
+	color: lightgreen;
+	background: darkgreen;
+	box-shadow: 4px 2px 2px black;
+}
+
+#submenu-num, #submenu-fecha{
+	display: none;
+}
+
+.scrollup{
+    font-size: 50px;
+    opacity:0.5;
+    position:fixed;
+    bottom:200px;
+    right:20px;
+    display:none;
+}
+

@@ -1,13 +1,18 @@
 $(document).ready(function(){
+  	
+  	//Muestra sub-menu de fechas-sorteos en miniatura
+	$("#btn-sub-sort").click(function(){
+		$("#submenu-fecha").slideToggle("slow");
+		$("#submenu-num").hide();
+	});
 
 
-	//Hace visible el submenú de los botones principales
-	$('.dropdown-submenu a.test').on("click", function(e){
-    	$(this).next('ul').slideToggle("slow");
-    	e.stopPropagation();
-    	e.preventDefault();
-  	});
-
+	//Muestra sub-menu de numeros, en miniatura
+	$("#btn-sub-num").click(function(){
+		$("#submenu-num").slideToggle("slow");
+		$("#submenu-fecha").hide();
+	});
+	
 
 	//Función predefinida para la animación de elementos con Animate.css
 	$.fn.extend({
@@ -28,7 +33,7 @@ $(document).ready(function(){
   	$('#col-izq').animateCss('fadeInLeft');
 
 
-  	//Para el hover azul de animale, sueños y profesiones
+  	//Para el hover azul de animales, sueños y profesiones
 	$(".text").mouseover(function(){
 
 		$(this).css("background-color","blue");

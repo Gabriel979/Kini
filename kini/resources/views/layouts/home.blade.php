@@ -6,6 +6,13 @@
 	<!-- estilo en css3 -->
 	<meta name="viewport" content="width=device-width, user-scalable=no ,initial-scale=1.0" />
 
+	<!-- Para el rastreador de Facebook -->
+	<meta property="og:url"           content="http://localhost:8000" />
+  	<meta property="og:type"          content="website" />
+  	<meta property="og:title"         content="Kini Simulador" />
+  	<meta property="og:description"   content="Simulador para Juego de azar" />
+  	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
 	<link rel="shorcut icon" href="{{asset('images/icono2.png')}}" />
 	<link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"/>
@@ -28,20 +35,20 @@
 				<button id="desp" class="boton dropdown-toggle titulo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class=" fa fa-bars" ></i></button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 
-					<div class="container-fluid"><a href="{{url('inicio')}}"><button class="btn-lg boton"><b><i class="fa fa-home"></i>  Inicio</b></button></a></div>
+					<div class=""><a href="{{url('inicio')}}"><button class="btn-chico btn-md"><b><i class="fa fa-home hidden-xs-down"></i> Inicio</b></button></a></div>
 
-					<div class="dropdown-submenu">
-						  <a  class="test" tabindex="-1" href="#"><button class="boton" ><i class="fa fa-calendar"></i> <b>Sorteos</b><b class="caret"></b></button></a> 
-						  <ul class="dropdown-menu" >
+					<div class="submenu">
+						  <a  class="" tabindex="-1" href="#"><button id="btn-sub-sort" class="btn-chico btn-md" ><i class="fa fa-calendar hidden-xs-down"></i> <b>Sorteos</b><b class="caret"></b></button></a> 
+						  <ul id="submenu-fecha" class="" >
 						  	@for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
 						  	 	@php $var=$fechas[$i]->fecha;  $mostrar=date_create($fechas[$i]->fecha); @endphp
 						    	<li class="items"><a href="{{url('sorteos-anteriores', $parameters=[$fechas[$i]->fecha])}}">{{date_format($mostrar,"j/n/Y")}}</a></li>
 						  	@endfor
 						  </ul>
 					</div >
-					<div class="dropdown-submenu" >
-					    <a class="test" tabindex="-1" href="#"><button class="boton"> <i class="fa fa-info-circle"></i> <b> Números <span class="caret"></span></b></button></a> 
-					  <ul class="boton-menu dropdown-menu">
+					<div class="submenu" >
+					    <a class="" tabindex="-1" href="#"><button id="btn-sub-num" class="btn-chico btn-md"> <i class="fa fa-info-circle hidden-xs-down"></i> <b> Números <span class="caret"></span></b></button></a> 
+					  <ul id="submenu-num" class="boton-menu">
 					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-suenos')}}">Sueños  <i class="fa fa-bed"></i></a></li>
 					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-profesiones')}}">Profesiones  <i class="fa fa-user-md"></i></a></li>
 					    <li class="items"> <a tabindex="-1" class="boton-menu" href="{{url('numeros-nombres')}}">Nombres  <i class="fa fa-font"></i></a></li>
@@ -52,7 +59,7 @@
 				</div>
 	    	</div>
 	    </div>
-	    <div class="text-right" id="word">Kini</div>
+	    <div class="text-center" id="word"><img id="trebol-icono2" src="{{asset('images/icono-kini.png')}}"> Kini</div>
 	</div>
 </nav>
 
@@ -100,10 +107,21 @@
 
 		<section>
 			<article id="frase">
-			<div id="frase-2">
-				<p>{{ $frases[0]->frase }}</p>
-				<p class="text-right" >{{ $frases[0]->autor }}</p>
-			</div>	
+				<div id="frase-2" class="fb-quotable" >
+					<p id="fraseazar">{{ $frases[0]->frase }}</p>
+					<p id="autor" class="text-right" >{{ $frases[0]->autor }}</p>
+				</div>
+				<div class="text-center"> 
+					<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" ><i class="fa fa-facebook" ></i></a>  
+
+					<a id="twitter" href="https://twitter.com/?status="  target="_blank"><i class="fa fa-twitter" ></i></a> 
+
+					<a id="linkedin" href="http://www.linkedin.com/shareArticle?url=" target="_blank"><i class="fa fa-linkedin" ></i></a> 
+
+					<a id="whatsapp" href="javascript:window.open('','','width=600,height=400,left=50,top=50,toolbar=yes')" target="_blank"><i class="fa fa-whatsapp" ></i></a>   
+					
+					<a id="googleplus" href="https://plus.google.com/share?url=" target="_blank"><i class="fa fa-google-plus" ></i></a>  
+				</div>	
 			</article>
 		</section>
 
@@ -128,6 +146,8 @@
 <br>
 <br>
 
+<a href="#" class="scrollup"><i class="fa fa-chevron-circle-up"></i></a>
+
 <footer class="foot">
 	<div  class="row  " itemscope >
 		<div id="email" class="text-left col-xs-5 col-sm-5 col-md-5"> <p><span itemprop="contact">info@gabriel-sanchez.com</span></p></div>
@@ -142,9 +162,86 @@
 
 
 
-@section('scripts')
+
 		{!!Html::script('js/animaciones.js')!!}
-@endsection
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		var frase = $("#fraseazar").html();	
+		var autor = $("#autor").html();		
+
+		var tw= 'https://twitter.com/?status='+frase;
+		var face= 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(frase)+''+encodeURIComponent(autor);
+		var linked= 'http://www.linkedin.com/shareArticle?url='+frase+''+autor;
+		var gplus= 'https://plus.google.com/share?url='+frase+''+autor;
+
+
+		$("#twitter").attr("href",tw);
+		$("#facebook").attr("href",face);
+		$("#linkedin").attr("href",linked);
+		$("#googleplus").attr("href",gplus);
+
+	});
+</script>
+
+<!-- Comment #2: SDK -->
+  <div id="fb-root"></div>
+  <script>
+	  (function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+
+  		var ancho= $(window).width();
+
+  		if (ancho<=650){
+  			$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
+  		}
+
+  		if (ancho>650){
+  			$('body').css('background-image', "url('../images/fondo7.png')");
+  		}
+
+  		$(window).resize(function(){
+
+  			var ancho= $(window).width();
+
+	  		if (ancho<=650){
+	  			$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
+	  		}
+
+	  		if (ancho>650){
+	  			$('body').css('background-image', "url('../images/fondo7.png')");
+	  		}
+
+	  	});
+
+	  	$(window).scroll(function(){
+		   if ($(this).scrollTop() > 100) {
+		        $('.scrollup').fadeIn();
+		   } else {
+		        $('.scrollup').fadeOut();
+		   }
+		});
+
+		$('.scrollup').click(function(){
+		    $("html, body").animate({ scrollTop: 0 }, fast);
+		    return false;
+		});
+  		
+  	});	 		 
+  </script>
+
 
 
 </body>

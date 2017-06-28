@@ -16,7 +16,7 @@
 	<br>
 	<div class="row">
 		<div class="container-fluid text-center">
-			<button id="suerte" class="btn btn-success">Probar Suerte</button>	
+			<button id="suerte" class="btn btn-success"><img src="{{asset('images/icono-kini2.png')}}"> Probar Suerte <img src="{{asset('images/icono-kini2.png')}}"> </button>	
 		</div>
 	</div>
 	
