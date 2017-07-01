@@ -113,8 +113,73 @@ $(document).ready(function(){
 		btn_presionado.slideToggle("slow");
 
 	});
+
+	//comportamiento del menu al salir el mouse del elemento
+	
+	$(".dropdown-menu").mouseleave(function(){
+		$(".dropdown-menu").slideUp("slow");
+	});
+
+	
+
+});
+
+
+//Cambia de imagenes de fondo según pantalla.
+$(document).ready(function(){
+
+	var ancho= $(window).width();
+
+	if (ancho<=753){
+		$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
+	}
+
+	if (ancho>753){
+		$('body').css('background-image', "url('../images/fondo7.png')");
+	}
+
+	$(window).resize(function(){
+
+		var ancho= $(window).width();
+
+		if (ancho<=753){
+			$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
+		}
+
+		if (ancho>753){
+			$('body').css('background-image', "url('../images/fondo7.png')");
+		}
+
+	});
+
+
+
+	//scroll del boton para subir en la pantalla
+	$(window).scroll(function(){
+	   if ($(this).scrollTop() > 100) {
+	        $('.scrollup').fadeIn();
+	   } else {
+	        $('.scrollup').fadeOut();
+	   }
+	});
+
+	$('.scrollup').click(function(){
+	    $("html, body").animate({ scrollTop: 0 }, fast);
+	    return false;
+	});
+
+
+
+	//comportamiento del menu "Compartir"
+	$("#compartir").click(function(){
+		$(".redes-menu").slideToggle("slow");
+	});
+
+
+	$(".redes-menu").mouseleave(function(){
+		$(".redes-menu").slideUp("slow");
+	});
 	
 
 
-
-});
+});	 		 

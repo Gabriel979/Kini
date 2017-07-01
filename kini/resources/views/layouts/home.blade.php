@@ -27,7 +27,18 @@
 <body>
 
 <nav >
-	<h1 class="text-left hidden-sm-down titulo animated fadeInLeft"><img id="trebol-icono" src="{{asset('images/icono-kini.png')}}"> Kini Simulador  </h1>
+	<h1 class="text-left hidden-sm-down titulo animated fadeInLeft"><img id="trebol-icono" src="{{asset('images/icono-kini.png')}}"> Kini Simulador</h1>
+	
+	<div class="redes text-center"> <button  id="compartir">Compartir<br><i class="fa fa-share-alt"></i></button></div>
+	<div class="redes-menu text-center"> 
+		<a href=""><i class="fa fa-facebook-square icono-face"></i></a><br>
+		<a href=""><i class="fa fa-twitter-square icono-twitter"></i></a><br>
+		<a href=""><i class="fa fa-whatsapp icono-whats"></i></a><br>
+		<a href=""><i class="fa fa-thumbs-o-up icono-face"></i></a><br>
+		<a href=""><i class="fa fa-linkedin-square icono-linkedin"></i></a><br>
+		<a href=""><i class="fa fa-google-plus-square icono-gplus"></i></a><br>
+	</div>
+
 
 	<div class="row hidden-md-up">
 		<div class="hidden-md-up">
@@ -74,7 +85,7 @@
 				
 				<li class="dropdown li-left" id="desplegar">
 				   <button data-target="desplegar" class="boton dropdown-toggle" data-toggle="dropdown"  >
-				    <i class="fa fa-calendar"></i>  <b>Sorteos anteriores</b> <b class="caret"></b>
+				    <i class="fa fa-calendar hidden-md-down"></i> <b class="visible-md-down hidden-lg-up">Sorteos</b> <b class="hidden-md-down " >Sorteos anteriores</b><b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
 				  @for($i=0; isset($fechas[$i]->fecha) && $i<8 ;$i++)
@@ -86,7 +97,7 @@
 
 				<li class="dropdown li-left" id="numeros">
 				   <button data-target="numeros" class="boton dropdown-toggle" data-toggle="dropdown" >
-				    <i class="fa fa-info-circle"></i>  <b>Números - significados </b> <b class="caret"></b>
+				    <i class="fa fa-info-circle hidden-md-down"></i> <b class="visible-md-down hidden-lg-up" >Sueños</b><b class="hidden-md-down" >Sueños - significados </b><b class="caret"></b>
 				  </button> 
 				  <ul class="boton-menu dropdown-menu" >
 				    <li class="li-left"><a href="{{url('numeros-suenos')}}"><button class="boton">  Sueños  <i class="fa fa-bed"></i></button></a> </li>
@@ -106,7 +117,7 @@
 		<br>
 
 		<section>
-			<article id="frase">
+			<article id="frase" class="hidden-md-down">
 				<div id="frase-2" class="fb-quotable" >
 					<p id="fraseazar">{{ $frases[0]->frase }}</p>
 					<p id="autor" class="text-right" >{{ $frases[0]->autor }}</p>
@@ -139,18 +150,39 @@
 	<aside  id="contenedor" class="hidden-sm-down col-md-1 col_der"> 
 		<div id="girando"> <p>Anuncie aquí!</p> </div>
 	</aside>
-
 </div>
 
 <br>
 <br>
 <br>
 
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1"> </div>
+	<div class="col-xs-10 col-sm-10 col-md-10">
+		<article id="frase-chico" class="visible-md-down hidden-lg-up">
+			<div id="" class="fb-quote" >
+				<p id="fraseazar">{{ $frases[0]->frase }}</p>
+				<p id="autor" class="text-right" >{{ $frases[0]->autor }}</p>
+			</div>
+			<div class="text-center iconos-chicos"> 
+				<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" ><i class="ic fa fa-facebook" ></i></a>  
+
+				<a id="twitter" href="https://twitter.com/?status="  target="_blank"><i class="ic fa fa-twitter" ></i></a> 
+
+				<a id="linkedin" href="http://www.linkedin.com/shareArticle?url=" target="_blank"><i class="ic fa fa-linkedin" ></i></a> 
+
+				<a id="whatsapp" href="javascript:window.open('','','width=600,height=400,left=50,top=50,toolbar=yes')" target="_blank"><i class="ic fa fa-whatsapp" ></i></a>   
+				<a id="googleplus" href="https://plus.google.com/share?url=" target="_blank"><i class="ic fa fa-google-plus" ></i></a>  
+			</div>	
+		</article>
+	</div>	
+</div>
+
 <a href="#" class="scrollup"><i class="fa fa-chevron-circle-up"></i></a>
 
 <footer class="foot">
 	<div  class="row  " itemscope >
-		<div id="email" class="text-left col-xs-5 col-sm-5 col-md-5"> <p><span itemprop="contact">info@gabriel-sanchez.com</span></p></div>
+		<div id="email" class="text-left col-xs-5 col-sm-5 col-md-5"> <p><span itemprop="contact"><a href="mailto:info@gabriel-sanchez.com">info@gabriel-sanchez.com</a></span></p></div>
 		<div  id="item" class="text-center col-xs-3 col-sm-3 col-md-3" style="text-align: center;" > <b>"Jugar compulsivamente es perjudicial para la salud"</b> </div>
 	</div>	
 	<div class="row">
@@ -193,58 +225,15 @@
 	    var js, fjs = d.getElementsByTagName(s)[0];
 	    if (d.getElementById(id)) return;
 	    js = d.createElement(s); js.id = id;
-	    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+	    js.src = "//connect.facebook.net/spa_ES/sdk.js#xfbml=1&version=v2.6";
 	    fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
   </script>
 
 
-  <script type="text/javascript">
-  	$(document).ready(function(){
-
-  		var ancho= $(window).width();
-
-  		if (ancho<=650){
-  			$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
-  		}
-
-  		if (ancho>650){
-  			$('body').css('background-image', "url('../images/fondo7.png')");
-  		}
-
-  		$(window).resize(function(){
-
-  			var ancho= $(window).width();
-
-	  		if (ancho<=650){
-	  			$('body').css('background-image', "url('../images/fondo-chico2-kini.png')");
-	  		}
-
-	  		if (ancho>650){
-	  			$('body').css('background-image', "url('../images/fondo7.png')");
-	  		}
-
-	  	});
-
-	  	$(window).scroll(function(){
-		   if ($(this).scrollTop() > 100) {
-		        $('.scrollup').fadeIn();
-		   } else {
-		        $('.scrollup').fadeOut();
-		   }
-		});
-
-		$('.scrollup').click(function(){
-		    $("html, body").animate({ scrollTop: 0 }, fast);
-		    return false;
-		});
-  		
-  	});	 		 
-  </script>
-
-
-
 </body>
+
+
 
 @yield('scripts')
 
