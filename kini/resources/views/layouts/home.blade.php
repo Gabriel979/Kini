@@ -7,11 +7,11 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no ,initial-scale=1.0" />
 
 	<!-- Para el rastreador de Facebook -->
-	<meta property="og:url"           content="http://localhost:8000" />
+	<meta property="og:url"           content="https://www.gabriel-sanchez.com" />
   	<meta property="og:type"          content="website" />
   	<meta property="og:title"         content="Kini Simulador" />
-  	<meta property="og:description"   content="Simulador para Juego de azar" />
-  	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+  	<meta property="og:description"   content="Podra ir aqui la frase del azar???" />
+  	<meta property="og:image"         content="https://www.gabriel-sanchez.com/kini/public/images/image.jpg" />
 
 	<link rel="shorcut icon" href="{{asset('images/icono2.png')}}" />
 	<link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" />
@@ -31,12 +31,12 @@
 	
 	<div class="redes text-center"> <button  id="compartir">Compartir<br><i class="fa fa-share-alt"></i></button></div>
 	<div class="redes-menu text-center"> 
-		<a href=""><i class="fa fa-facebook-square icono-face"></i></a><br>
-		<a href=""><i class="fa fa-twitter-square icono-twitter"></i></a><br>
+		<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.gabriel-sanchez.com/kini','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" target="_blank" ><i class="fa fa-facebook-square icono-face"></i></a><br>
+		<a href="https://twitter.com/?status=https://www.gabriel-sanchez.com/kini" target="_blank"><i class="fa fa-twitter-square icono-twitter"></i></a><br>
 		<a href=""><i class="fa fa-whatsapp icono-whats"></i></a><br>
-		<a href=""><i class="fa fa-thumbs-o-up icono-face"></i></a><br>
-		<a href=""><i class="fa fa-linkedin-square icono-linkedin"></i></a><br>
-		<a href=""><i class="fa fa-google-plus-square icono-gplus"></i></a><br>
+		<a href="#" id="me-gusta" target="_blank" ><i class="fa fa-thumbs-o-up icono-face"></i></a><br>
+		<a href="http://www.linkedin.com/shareArticle?url=https://www.gabriel-sanchez.com/kini" target="_blank"><i class="fa fa-linkedin-square icono-linkedin"></i></a><br>
+		<a href="https://plus.google.com/share?url=https://www.gabriel-sanchez.com/kini" target="_blank"><i class="fa fa-google-plus-square icono-gplus"></i></a><br>
 	</div>
 
 
@@ -118,12 +118,12 @@
 
 		<section>
 			<article id="frase" class="hidden-md-down">
-				<div id="frase-2" class="fb-quotable" >
+				<div id="frase-2" class="fb-quote" >
 					<p id="fraseazar">{{ $frases[0]->frase }}</p>
 					<p id="autor" class="text-right" >{{ $frases[0]->autor }}</p>
 				</div>
 				<div class="text-center"> 
-					<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" ><i class="fa fa-facebook" ></i></a>  
+					<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.gabriel-sanchez.com" target="_blank" ><i class="fa fa-facebook" ></i></a>  
 
 					<a id="twitter" href="https://twitter.com/?status="  target="_blank"><i class="fa fa-twitter" ></i></a> 
 
@@ -165,7 +165,7 @@
 				<p id="autor" class="text-right" >{{ $frases[0]->autor }}</p>
 			</div>
 			<div class="text-center iconos-chicos"> 
-				<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" ><i class="ic fa fa-facebook" ></i></a>  
+				<a  id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.gabriel-sanchez.com" target="_blank" ><i class="ic fa fa-facebook" ></i></a>  
 
 				<a id="twitter" href="https://twitter.com/?status="  target="_blank"><i class="ic fa fa-twitter" ></i></a> 
 
@@ -177,6 +177,8 @@
 		</article>
 	</div>	
 </div>
+
+<div class="fb-like" data-href="https://www.gabriel-sanchez.com/kini" data-width="25" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
 <a href="#" class="scrollup"><i class="fa fa-chevron-circle-up"></i></a>
 
@@ -205,30 +207,51 @@
 		var autor = $("#autor").html();		
 
 		var tw= 'https://twitter.com/?status='+frase;
-		var face= 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(frase)+''+encodeURIComponent(autor);
+		//var face= 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(frase)+''+encodeURIComponent(autor);
 		var linked= 'http://www.linkedin.com/shareArticle?url='+frase+''+autor;
 		var gplus= 'https://plus.google.com/share?url='+frase+''+autor;
 
 
 		$("#twitter").attr("href",tw);
-		$("#facebook").attr("href",face);
+		//$("#facebook").attr("href",face);
 		$("#linkedin").attr("href",linked);
 		$("#googleplus").attr("href",gplus);
+
 
 	});
 </script>
 
 <!-- Comment #2: SDK -->
-  <div id="fb-root"></div>
-  <script>
-	  (function(d, s, id) {
-	    var js, fjs = d.getElementsByTagName(s)[0];
-	    if (d.getElementById(id)) return;
-	    js = d.createElement(s); js.id = id;
-	    js.src = "//connect.facebook.net/spa_ES/sdk.js#xfbml=1&version=v2.6";
-	    fjs.parentNode.insertBefore(js, fjs);
-	  }(document, 'script', 'facebook-jssdk'));
-  </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+ 	 var js, fjs = d.getElementsByTagName(s)[0];
+  	if (d.getElementById(id)) return;
+  	js = d.createElement(s); js.id = id;
+  	js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
+  	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#me-gusta").click(function(e){
+			e.preventDefault();
+			//alert("listo!!");
+			//$("button.inlineBlock").click();
+			//$("#u_0_4").click();
+			//$("#u_0_1").submit();
+			//$("button[type|='submit']").click();
+
+			$("._3jn- inlineBlock").addClass("class","fa fa-whatsapp");
+			$("._49vh").addClass("class","fa fa-whatsapp");
+			$("._49vh _2pi7").addClass("class","fa fa-whatsapp");
+			
+		});
+
+		
+	});
+</script>
+
 
 
 </body>
